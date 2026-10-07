@@ -1,0 +1,349 @@
+/* ==========================================
+   Task 2: Reset & Base Styles
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333333;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ==========================================
+   Header Styling
+   ========================================== */
+.app-header {
+  background: linear-gradient(135deg, #2b5876, #4e4376);
+  color: #ffffff;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.5px;
+}
+
+.app-header .tagline {
+  font-size: 1rem;
+  opacity: 0.85;
+  font-weight: 300;
+}
+
+/* ==========================================
+   Task 2: Layout (Centred Column max 700px)
+   ========================================== */
+.main-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+/* Task 2: White Section Cards */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e1e8ed;
+}
+
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* ==========================================
+   Task 2: Flexbox Form Styling
+   ========================================== */
+.note-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.form-group {
+  position: relative;
+}
+
+.input-group {
+  flex: 1;
+}
+
+.note-form input[type="text"],
+.note-form select,
+.search-box input[type="text"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #fafafa;
+}
+
+.note-form input[type="text"]:focus,
+.note-form select:focus,
+.search-box input[type="text"]:focus {
+  border-color: #4e4376;
+  box-shadow: 0 0 0 3px rgba(78, 67, 118, 0.15);
+  background-color: #ffffff;
+}
+
+.char-counter {
+  position: absolute;
+  right: 12px;
+  bottom: -20px;
+  font-size: 0.75rem;
+  color: #888888;
+}
+
+.select-group select {
+  min-width: 120px;
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: #4e4376;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #3b325c;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: #ffffff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.btn-danger-outline {
+  background-color: transparent;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+}
+
+.btn-danger-outline:hover {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+/* Task 2 & 4: Red Error Message */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  font-weight: 500;
+  min-height: 1.25rem;
+}
+
+/* ==========================================
+   Task 1 & 5: Your Notes & Search Area
+   ========================================== */
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.notes-header h2 {
+  margin-bottom: 0;
+}
+
+.search-box {
+  margin-bottom: 1rem;
+}
+
+.note-count {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* ==========================================
+   Task 2 & 3: Note Cards & Categories
+   ========================================== */
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.note-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Task 2: Left-Border Colours per Category */
+.category-personal {
+  border-left: 5px solid #008080; /* Teal */
+}
+
+.category-work {
+  border-left: 5px solid #8b0000; /* Dark Red */
+}
+
+.category-study {
+  border-left: 5px solid #1e90ff; /* Blue */
+}
+
+.note-content {
+  flex: 1;
+}
+
+.note-text {
+  font-size: 1rem;
+  color: #2d3748;
+  word-break: break-word;
+  margin-bottom: 0.5rem;
+}
+
+.note-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+/* Small Category Badge */
+.category-badge {
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.5px;
+}
+
+.badge-personal {
+  background-color: #e6f7f7;
+  color: #008080;
+}
+
+.badge-work {
+  background-color: #fde8e8;
+  color: #8b0000;
+}
+
+.badge-study {
+  background-color: #ebf5ff;
+  color: #1e90ff;
+}
+
+.no-notes-message {
+  text-align: center;
+  color: #a0aec0;
+  padding: 2rem 0;
+  font-style: italic;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ==========================================
+   Footer Styling
+   ========================================== */
+.app-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.85rem;
+  color: #718096;
+  border-top: 1px solid #e2e8f0;
+  margin-top: auto;
+}
+
+/* ==========================================
+   Task 2: Responsive Design (600px or narrower)
+   ========================================== */
+@media (max-width: 600px) {
+  .note-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .select-group select,
+  .btn {
+    width: 100%;
+  }
+
+  .char-counter {
+    bottom: -22px;
+  }
+
+  .note-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .note-card .btn-danger {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+  }
+}
